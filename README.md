@@ -18,16 +18,8 @@ input a fasta file of the genomic sequence and get a list of sequences to order 
    file containing the Snakemake pipeline
 - scripts/  
    directory containing all the custom python scripts for the pipeline
-- logs/  
-   output directory for the log reports and error messages for all the Snakemake rules
 - genomes/  
    empty directory in with to place the genome fasta files of the species of interest, formatted as: species_name.fna
-- guide_finder/  
-   output directory with the fasta files containing all the guides on each sequence
-- rRNA_fasta/  
-output directory for barrnap containing the fasta sequences of the rRNA
-- rRNA_gff/  
-  output directory for barrnap containing the fasta sequences of the rRNA
   
 
 #### Create a conda environment with the following tools:
@@ -82,6 +74,18 @@ The pipeline outputs 2 files:
 The .tsv file contains in the first row a list of the species that the set is designed for. The second row shows the number of guides in the set. The following rows list the guideID, the sequence of the guide, the number of genes that it targets and a list of which genes these are. The guideID indicated the species that is was designed on but this does not mean that it only targets that specific species. At the end the file list the number of rRNA genes that no guides map to and list those sequences.
 
 The .order.txt file contains a list of the oligo’s that need to be ordered. These do not have the pam site in the sequence and have the T7 promotor at the 5’ end and a 14nt overlap at the 3’ end making this set compatible with the [EnGen® sgRNA Synthesis Kit, S. pyogenes](https://international.neb.com/products/e3322-engen-sgrna-synthesis-kit-s-pyogenes#Product%20Information)
+
+snakemake also creates the folowing directorys with all the files of the annalisys, these do not need to be removed or emptied between runs.
+
+- logs/  
+   output directory for the log reports and error messages for all the Snakemake rules
+- guide_finder/  
+   output directory with the fasta files containing all the guides on each sequence
+- rRNA_fasta/  
+output directory for barrnap containing the fasta sequences of the rRNA
+- rRNA_gff/  
+  output directory for barrnap containing the fasta sequences of the rRNA
+  
 
 
 ## Troubleschooting
