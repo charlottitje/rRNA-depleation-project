@@ -18,16 +18,22 @@ input a fasta file of the genomic sequence and get a list of sequences to order 
    file containing the Snakemake pipeline
 - scripts/  
    directory containing all the custom python scripts for the pipeline
-- genomes/  
-   empty directory in with to place the genome fasta files of the species of interest, formatted as: species_name.fna
   
 
-#### Create a conda environment with the following tools:
+#### instal dependencys:
+
+install or create a conda enviornment with the folowing tools:
 
 Barrnap version 0.9
 
 Bowtie version 1.2.2
 
+#### create genomes dir:
+
+create a new directory named genomes in wich the genomic sequences can be placed.
+
+- genomes/  
+   empty directory in with to place the genome fasta files of the species of interest, formatted as: species_name.fna
 
 ## Input
 
@@ -51,8 +57,8 @@ mouse.fna
 ## Running
 
 
-With the conda environment containing barrnap and bowtie active, the Snakemake pipeline can be run  
-For this a name for the set needs to be given in the place of “example_set”, this name can not include a spaces.
+**_With (the conda environment containing) barrnap and bowtie active, and the input sequences in the geneome directory._** the Snakemake pipeline can be run  
+For this a name for the set needs to be given in the place of “example_set”, this name can **not** include spaces.
 
 It is good practice to test the installation with a snakemake dry run using the following command:
 ```
