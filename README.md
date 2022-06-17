@@ -6,14 +6,14 @@ Created by Charlotte Bommelijn and Nikki rovers
 
 This Snakemake pipeline makes a set of guide rRNA’s for Cas-9 digestion of the rRNA of a given species. It uses barrnap and bowtie in combinations with two custom python scripts to create a set of guide rna's to digest all the rRNA genes for a given species.
 
-input a fasta file of the genomic sequence and get a list of sequences to order compatible with EnGen® sgRNA Synthesis Kit, S. pyogenes
+Input a fasta file of the genomic sequence and get a list of sequences to order compatible with EnGen® sgRNA Synthesis Kit, S. pyogenes
 
 
 ## Installation:
 
 #### Import the github repository containing the following files and directory’s:
 
-- README.txt
+- README.md
 - snakefile  
    file containing the Snakemake pipeline
 - scripts/  
@@ -27,6 +27,8 @@ install or create a conda enviornment with the folowing tools:
 [Barrnap](https://github.com/tseemann/barrnap) version 0.9
 
 [Bowtie](https://github.com/BenLangmead/bowtie) version 1.2.2
+
+python version 3.9.13
 
 #### create genomes dir:
 
