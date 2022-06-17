@@ -1,4 +1,5 @@
 SETNAME= config["set"]
+KINGDOM= config["kingdom"]
 
 SPECIES= glob_wildcards("genomes/{organism}.fna").organism
 
@@ -16,7 +17,7 @@ rule barrnapFASTA:
     log:
         err="logs/barnapFASTA.{species}.err"
     shell:
-        "barrnap --kingdom euk --quiet --outseq {output.fasta} < {input} 2> {log.err}"
+        "barrnap --kingdom {wildcards.KINGDOM} --quiet --outseq {output.fasta} < {input} 2> {log.err}"
         
 rule barrnapGFF:
     input:
@@ -26,7 +27,7 @@ rule barrnapGFF:
     log:
         err="logs/barnapGFF.{species}.err"
     shell:
-        "barrnap --kingdom euk --quiet  < {input} >{output.gff} 2> {log.err}"
+        "barrnap --kingdom {wildcards.KINGDOM} --quiet  < {input} >{output.gff} 2> {log.err}"
         
 rule guide_finder:
     input:
