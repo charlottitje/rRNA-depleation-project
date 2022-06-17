@@ -24,9 +24,9 @@ input a fasta file of the genomic sequence and get a list of sequences to order 
 
 install or create a conda enviornment with the folowing tools:
 
-Barrnap version 0.9
+[Barrnap](https://github.com/tseemann/barrnap) version 0.9
 
-Bowtie version 1.2.2
+[Bowtie](https://github.com/BenLangmead/bowtie) version 1.2.2
 
 #### create genomes dir:
 
