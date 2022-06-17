@@ -46,7 +46,6 @@ aspergillus_niger.fna
 homo_sapiens.fna  
 escherichia_coli.fna
 
-
 _**wrong** examples:_ 
 
 aspergillus niger.fna  
@@ -54,19 +53,31 @@ c.auris.fasta
 mouse.fna
 
 
+
 ## Running
 
 
-**_With (the conda environment containing) barrnap and bowtie active, and the input sequences in the geneome directory._** the Snakemake pipeline can be run  
-For this a name for the set needs to be given in the place of “example_set”, this name can **not** include spaces.
+**_With (the conda environment containing) barrnap and bowtie active, and the input sequences in the geneome directory._** The Snakemake pipeline can be run 
+
+For this a name for the set needs to be given to the set variable in the place of “example_set”, this name can **not** include spaces.
+
+The kingdom of all the species also needs to be specified to the kingdom variable, this can be:  
+| flag       | kingdom           |
+| ------------- |-------------|
+| euk      | Eukaryota |
+| bac      | Bacteria      |
+| arc | Archaea      |
+| mito | Metazoan Mitochondria      |
+
+only one kingdom can be given to a set, therefore **species of different kingdoms are not able to be combined in a single set.**
 
 It is good practice to test the installation with a snakemake dry run using the following command:
 ```
-$ snakemake --cores 1 --config set=example_set --dry-run
+$ snakemake --cores 1 --config set=example_set kingdom=euk --dry-run
 ```
 Then the pipeline can be run using the following command:
 ```
-$ snakemake  --cores 1 --config set=example_set
+$ snakemake  --cores 1 --config set=example_set kingdom=euk
 ```
 The --cores can be changed to set the number of cores you want to use. With only one the longest step is the barrnap rRNA extraction.
 
